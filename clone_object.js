@@ -45,9 +45,13 @@ function clone_object(obj, but_this) {
 }
 
 /* usage:
-var some_obj = {prop1: {prop1_1: {prop1_2: "i am prop1_2"}}, prop2: "i am prop2", prop3: {prop3_1: "i am prop3_1", prop3_1_2: "i am prop3_1_2"}};
+var some_obj = {prop1: {prop1_1: {prop1_2: "i am prop1_2"}},
+                prop2: "i am prop2",
+                prop3: {prop3_1: "i am prop3_1",
+                        prop3_1_2: "i am prop3_1_2"}
+                };
 var second_obj = clone_object(o, ['prop1_2', 'prop3_1']);
 
-'second obj' will not contain the properties 'prop1_2' and 'prop3_1'.
+'second_obj' will not contain the properties 'prop1_2' and 'prop3_1'.
 */
 
