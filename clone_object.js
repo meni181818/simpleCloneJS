@@ -6,7 +6,7 @@ function clone_object(obj, but_this) {
         var filterNo = but_this;
     // if 'but_this' is not array
     } else {
-        // 'filterNo' null = array
+        // 'filterNo' = null array
         var filterNo = [];
     }
     console.log(filterNo);
