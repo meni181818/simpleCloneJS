@@ -21,3 +21,13 @@ function each(objOrArr, callBack) {
     }
     
 }
+
+
+// return var name as string
+function getVarNameAsString(variable) {
+    for(prop in window){ 
+       if(window[prop] === v){
+          return prop;
+       }
+    }
+}
