@@ -1,4 +1,4 @@
-function replaceAttrName(sourceObj, replaceList, destObj) {
+function replaceAttrNames(sourceObj, replaceList, destObj) {
     destObj = destObj || {};
     // for each property in source object
     for(var prop in sourceObj) {
@@ -11,12 +11,12 @@ function replaceAttrName(sourceObj, replaceList, destObj) {
                 if(replaceList[prop]) {
                     var strName = replaceList[prop];
                     destObj[strName] = {};
-                    // send it to cloner function (recursively)
-                    replaceAttrName(sourceObj[prop], replaceList, destObj[strName]);
+                    // send it to replaceAttrNames() function (recursively)
+                    replaceAttrNames(sourceObj[prop], replaceList, destObj[strName]);
                 // if its NOT in the replace List (as property)
                 } else if(!replaceList[prop]) {
                     destObj[prop] = {};
-                    replaceAttrName(sourceObj[prop], replaceList, destObj[prop]);
+                    replaceAttrNames(sourceObj[prop], replaceList, destObj[prop]);
                 }
                 
             // if the property is not object
@@ -34,3 +34,11 @@ function replaceAttrName(sourceObj, replaceList, destObj) {
     } 
     return destObj;
 }
+
+
+/*
+=== usage: ===
+var obj = {foo: 'word a', bar: {some: 'word b', thing: 'word c'}};
+var replacedObj = replaceAttrNames(obj, {foo: 'baz', bar: 'qux'});
+// the output will be (as JSON): {"obj": {"baz": "word a", "qux": {"some": "word b", "thing": "word c"}} }
+*/
