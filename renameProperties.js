@@ -55,7 +55,7 @@ function renameProperties(sourceObj, replaceList, destObj) {
 }
 
 // NOTE: If you are using Jquery OR underscore.js Or another library that has 'each()' function, you can use it Instead This function,
-// (You will need to replace the call to 'each()' in 'renameProperties()' to your 'each()'.)
+// (You will need to replace the call to 'each()' in 'renameProperties()' to your 'each()', in Jquery: '$.each()', and in underscore.js: '_.each()').
 function each(objOrArr, callBack) {
     // if we got Array
     if(objOrArr instanceof Array) {
