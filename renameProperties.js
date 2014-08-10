@@ -39,6 +39,6 @@ function renameProperties(sourceObj, replaceList, destObj) {
 /*
 === usage: ===
 var obj = {foo: 'word a', bar: {some: 'word b', thing: 'word c'}};
-var replacedObj = replaceAttrNames(obj, {foo: 'baz', bar: 'qux'});
+var replacedObj = renameProperties(obj, {foo: 'baz', bar: 'qux'});
 // the output will be (as JSON): {"obj": {"baz": "word a", "qux": {"some": "word b", "thing": "word c"}} }
 */
