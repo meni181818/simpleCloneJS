@@ -14,10 +14,6 @@ function each(objOrArr, callBack) {
                 callBack(prop);
             }
         }
-        
-    // if we got somthing is not an Object and not an array
-    } else {
-        callBack(objOrArr);
     }
     
 }
