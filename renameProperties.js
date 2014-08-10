@@ -1,4 +1,4 @@
-function replaceAttrNames(sourceObj, replaceList, destObj) {
+function renameProperties(sourceObj, replaceList, destObj) {
     destObj = destObj || {};
     // for each property in source object
     for(var prop in sourceObj) {
@@ -12,11 +12,11 @@ function replaceAttrNames(sourceObj, replaceList, destObj) {
                     var strName = replaceList[prop];
                     destObj[strName] = {};
                     // send it to replaceAttrNames() function (recursively)
-                    replaceAttrNames(sourceObj[prop], replaceList, destObj[strName]);
+                    renameProperties(sourceObj[prop], replaceList, destObj[strName]);
                 // if its NOT in the replace List (as property)
                 } else if(!replaceList[prop]) {
                     destObj[prop] = {};
-                    replaceAttrNames(sourceObj[prop], replaceList, destObj[prop]);
+                    renameProperties(sourceObj[prop], replaceList, destObj[prop]);
                 }
                 
             // if the property is not object
