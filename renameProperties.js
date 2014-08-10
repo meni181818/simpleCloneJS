@@ -1,7 +1,7 @@
 function renameProperties(sourceObj, replaceList, destObj) {
     destObj = destObj || {};
     // for each property in source object
-    $.each(sourceObj, function(key) {
+    each(sourceObj, function(key) {
         // if the property really exist
         if(sourceObj.hasOwnProperty(key)) {
             
@@ -53,6 +53,28 @@ function renameProperties(sourceObj, replaceList, destObj) {
     
     return destObj;
 }
+
+// NOTE: If you are using Jquery OR underscore.js Or another library that has 'each()' function, you can use it Instead This function,
+// (You will need to replace the call to 'each()' in 'renameProperties()' to your 'each()'.)
+function each(objOrArr, callBack) {
+    // if we got Array
+    if(objOrArr instanceof Array) {
+        for(var i = 0; i < objOrArr.length; i++) {
+            callBack(i);
+        }
+        
+    // if we got an Object
+    } else if(typeof objOrArr === 'object') {
+        for(var prop in objOrArr) {
+            // if the property really exist
+            if(objOrArr.hasOwnProperty(prop)) {
+                callBack(prop);
+            }
+        }
+    }
+    
+}
+
 
 
 /*
