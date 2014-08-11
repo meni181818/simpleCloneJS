@@ -22,7 +22,7 @@ function each(objOrArr, callBack) {
 // return var name as string
 function getVarNameAsString(variable) {
     for(prop in window){ 
-       if(window[prop] === v){
+       if(window[prop] === variable){
           return prop;
        }
     }
