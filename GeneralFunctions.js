@@ -20,9 +20,10 @@ function each(objOrArr, callBack) {
 
 
 // return var name as string
-function getVarNameAsString(variable) {
-    for(prop in window){ 
-       if(window[prop] === variable){
+function getVarAsStr(variable, context) {
+    context = context || window;
+    for(var prop in context){ 
+       if(context[prop] === variable){
           return prop;
        }
     }
