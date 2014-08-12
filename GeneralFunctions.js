@@ -22,9 +22,11 @@ function each(objOrArr, callBack) {
 // return var name as string
 function getVarAsStr(variable, context) {
     context = context || window;
+    var resultArr = [];
     for(var prop in context){ 
-       if(context[prop] === variable){
-          return prop;
-       }
+        if(context[prop] === variable){
+            resultArr.push(prop);
+        }
     }
+    return resultArr;
 }
